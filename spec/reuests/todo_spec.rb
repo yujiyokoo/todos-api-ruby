@@ -5,7 +5,7 @@ describe 'Todos' do
   include Rack::Test::Methods
 
   def app
-    Todos::API.new
+    TodosAPI.freeze.app
   end
 
   describe 'GET /' do

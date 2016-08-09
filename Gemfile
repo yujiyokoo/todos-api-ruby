@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'grape'
+gem 'roda'
 gem 'sequel'
 gem 'pg'
 gem 'rom-repository'
 gem 'rom-sql'
+gem 'multi_json'
 
 group 'development', 'test' do
   gem 'shotgun'
