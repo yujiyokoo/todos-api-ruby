@@ -20,4 +20,11 @@ namespace :db do
 
     puts message
   end
+
+  task :create do
+    database_name = ENV['DATABASE'].split('/').last
+    database_host = ENV['DATABASE'].split('/')[0..-2].join('/')
+    db = Sequel.connect(database_host + '/template1')
+    db.run "CREATE DATABASE #{database_name};"
+  end
 end
