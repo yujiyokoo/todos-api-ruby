@@ -6,11 +6,11 @@ gem 'pg'
 gem 'rom-repository'
 gem 'rom-sql'
 gem 'multi_json'
+gem 'dotenv'
 
 group 'development', 'test' do
   gem 'shotgun'
   gem 'pry'
-  gem 'dotenv'
 end
 
 group 'test' do
