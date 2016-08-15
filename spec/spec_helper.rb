@@ -1,15 +1,10 @@
+ENV['RACK_ENV'] ||= 'test'
+$:.push('.')
 require 'rack/test'
 require 'sequel'
 require 'database_cleaner'
+require 'config/env'
 require 'pry'
-
-ENV['RACK_ENV'] ||= 'test'
-require 'dotenv'
-
-environment = ENV['RACK_ENV'] ||= 'development'
-Dotenv.load(".env.#{environment}")
-
-$:.push('.')
 
 RSpec.configure do |config|
   config.before(:suite) do
