@@ -37,6 +37,7 @@ GEM
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (11.2.2)
     roda (2.16.0)
       rack
     rom (2.0.0)
@@ -94,6 +95,7 @@ DEPENDENCIES
   pg
   pry
   rack-test
+  rake
   roda
   rom-repository
   rom-sql

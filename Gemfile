@@ -7,6 +7,7 @@ gem 'rom-repository'
 gem 'rom-sql'
 gem 'multi_json'
 gem 'dotenv'
+gem 'rake'
 
 group 'development', 'test' do
   gem 'shotgun'
