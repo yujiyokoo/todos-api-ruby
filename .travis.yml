@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.2
+env:
+  - RACK_ENV=test
+install: bundle install && bundle exec rake db:create && bundle exec rake db:migrate
+script: bundle exec rake spec
+
