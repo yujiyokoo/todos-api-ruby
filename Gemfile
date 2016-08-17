@@ -12,6 +12,7 @@ gem 'rake'
 group 'development', 'test' do
   gem 'shotgun'
   gem 'pry'
+  gem 'pry-byebug'
 end
 
 group 'test' do
