@@ -1,8 +1,20 @@
 language: ruby
 rvm:
-  - 2.2.2
+- 2.2.2
 env:
   - RACK_ENV=test
-install: bundle install && bundle exec rake db:create && bundle exec rake db:migrate
+install: bundle install && bundle exec rake db:migrate
 script: bundle exec rake spec
-
+deploy:
+  - provider: elasticbeanstalk
+    app: todo-api-ruby
+    env: todoApiRuby-env-03
+    bucket_name: elasticbeanstalk-us-east-1-394547114271
+    region: us-east-1
+    access_key_id:
+      secure: "ZKkrKepp/sZo6XSJndWpCYZvAqDi2MPl1ZbbOUn6keAkTICqJ3YIkPgz8aKCEvmByIhEGcrzSqUhE2w/0H6u9LUDD7xLbLWQZj60hN9yGvGxz+uMdks3nDlqO6UTEFOHFNDRgTcYyZAvtCE/XPVTQicggg8wu5EwIzQITrYSgJCWWkdp+olaKvR8mVTw882sjq8jos8jnxuSEuT+68+DxFfwD5Ipvmb+oUt/Z/3SrE8XqK3xwMcf1NwSIqjtUawBRksdpHZmzuqCq6FIXoYDoGXOvjcrKsTO78mxZBGdt7YiCNIeKS8LMJE+Bjm3vQ5YJEF+/IQH6qSQ8IR1rT+yjIKBdFr7CJEKrvtoKKQa/mSXP7Jy0tpD5pfGBGWp3hWX1scEnKfhZdK4E0Yiw0b9ykYEP90qXFhQ0fneRsZ1F9/STTqB77/KuqZGlR64nehzM8lKhJVPTM/HlYknrL9lZ5LKKxnag/gQCd7GQKDGxGzwIvyb2RnPdBi0Jgt+ffzW2JsTXcrLz/RF6pHPoRs/EFySyYVU7pDmqlThgUsLJS7lWFtph7oaCN7/wtMkCya0IwgpggjV8IUU/n+x6cX7Y3e5vcAd/d115I9Z+Nfzfsfv1xU4+zax+s7EQpRy3hjJeDh7yOqFBL2Du7zPGBuJVHETdMM80cF+6rUKcQggFks="
+    secret_access_key:
+      secure: "X9U7Rm81oLUl9H6pzePQ0/Hnlj+rtH9K9Hl4g68no6ByfF1BxXeo7aXI5NHj9f8iKqpiRcMeyBJ+/L1e5b3wltpSWGmRXhPfZOfrjIoV/P4u3AiRKVe4G0LbTL194Xx+SxRYwJr8RESbD4TrG03rGmsGHUIsHfQdmXbR8oP0DLFzuwH00+UqtH/wpVEywzcNJkheuLZ7DYd2MEeA9TxPC9H209X7nFpu7n0YQ5gsRDuioQVm0vbwa4O66LFm1e5TcAtTfOKy/OjwL4qEUtoD3X8VU14DE6LPHkSmabFPoYRnpIpnZnRP9E70buVV1KUkBagwrHbiHoduV7wBy/bp/OtAjHkI03j7N4XjBfYyJl+hs7e1dBoICQCeaIhDWEQctte0qeFdx5vkdkdsqh4N9CLFp5Yw1G1/G3QGMSaontcboNwj7wyT4nQVv0wvJTqBtqXAtnUK2BOXKPgxUoPlZsnYxSrNHlz89ybZMgetA/A0h5yJbXBUQyX/9WJdLqvJTD3wLRFGjAPQ5M6TBv3F6dIlkEMrfFrPfzEKkP3vhAO2lJIruzCBFqkOAi8utnKlvyrVWPpW144UIQMyYXyOWwf9flBKSZWAA6XAfnnHNTI7oZzLwZFRxeJ+/JFqA6omAH4TpTKWWDoceI4PHuCelrDi4b8/XcVSSSVroiAroBc="
+    on:
+      repo: yujiyokoo/todos-api-ruby
+      all_branches: true
